@@ -15,10 +15,10 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		D42843DD15D432D00088CC91 /* WhereAmI */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; name = WhereAmI; path = whereami; sourceTree = BUILT_PRODUCTS_DIR; };
+		D42843DD15D432D00088CC91 /* whereami */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = whereami; sourceTree = BUILT_PRODUCTS_DIR; };
 		D42843E115D432D00088CC91 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		D42843E415D432D00088CC91 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		D42843E715D432D10088CC91 /* WhereAmI-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WhereAmI-Prefix.pch"; sourceTree = "<group>"; };
+		D42843E715D432D10088CC91 /* WhereAmI-GeoJSON-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "WhereAmI-GeoJSON-Prefix.pch"; sourceTree = "<group>"; };
 		D430261B15D43AA3001E9462 /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
 		D430261E15D43B96001E9462 /* LocationGetter.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LocationGetter.h; sourceTree = "<group>"; };
 		D430261F15D43B96001E9462 /* LocationGetter.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LocationGetter.m; sourceTree = "<group>"; };
@@ -53,7 +53,7 @@
 		D42843DE15D432D00088CC91 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				D42843DD15D432D00088CC91 /* WhereAmI */,
+				D42843DD15D432D00088CC91 /* whereami */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -82,7 +82,7 @@
 		D42843E615D432D10088CC91 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D42843E715D432D10088CC91 /* WhereAmI-Prefix.pch */,
+				D42843E715D432D10088CC91 /* WhereAmI-GeoJSON-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
@@ -90,9 +90,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		D42843DC15D432D00088CC91 /* WhereAmI */ = {
+		D42843DC15D432D00088CC91 /* WhereAmI-GeoJSON */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = D42843EC15D432D10088CC91 /* Build configuration list for PBXNativeTarget "WhereAmI" */;
+			buildConfigurationList = D42843EC15D432D10088CC91 /* Build configuration list for PBXNativeTarget "WhereAmI-GeoJSON" */;
 			buildPhases = (
 				D42843D915D432D00088CC91 /* Sources */,
 				D42843DA15D432D00088CC91 /* Frameworks */,
@@ -101,9 +101,9 @@
 			);
 			dependencies = (
 			);
-			name = WhereAmI;
+			name = "WhereAmI-GeoJSON";
 			productName = WhereAmI;
-			productReference = D42843DD15D432D00088CC91 /* WhereAmI */;
+			productReference = D42843DD15D432D00088CC91 /* whereami */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -113,9 +113,9 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0440;
-				ORGANIZATIONNAME = "Rob Mathers";
+				ORGANIZATIONNAME = Onderweg;
 			};
-			buildConfigurationList = D42843D715D432D00088CC91 /* Build configuration list for PBXProject "WhereAmI" */;
+			buildConfigurationList = D42843D715D432D00088CC91 /* Build configuration list for PBXProject "WhereAmI-GeoJSON" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -127,7 +127,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				D42843DC15D432D00088CC91 /* WhereAmI */,
+				D42843DC15D432D00088CC91 /* WhereAmI-GeoJSON */,
 			);
 		};
 /* End PBXProject section */
@@ -201,7 +201,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WhereAmI/WhereAmI-Prefix.pch";
+				GCC_PREFIX_HEADER = "WhereAmI/WhereAmI-GeoJSON-Prefix.pch";
 				PRODUCT_NAME = whereami;
 				SDKROOT = "";
 			};
@@ -212,7 +212,7 @@
 			buildSettings = {
 				DEPLOYMENT_LOCATION = NO;
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "WhereAmI/WhereAmI-Prefix.pch";
+				GCC_PREFIX_HEADER = "WhereAmI/WhereAmI-GeoJSON-Prefix.pch";
 				PRODUCT_NAME = whereami;
 				SDKROOT = "";
 			};
@@ -221,7 +221,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D42843D715D432D00088CC91 /* Build configuration list for PBXProject "WhereAmI" */ = {
+		D42843D715D432D00088CC91 /* Build configuration list for PBXProject "WhereAmI-GeoJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D42843EA15D432D10088CC91 /* Debug */,
@@ -230,7 +230,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		D42843EC15D432D10088CC91 /* Build configuration list for PBXNativeTarget "WhereAmI" */ = {
+		D42843EC15D432D10088CC91 /* Build configuration list for PBXNativeTarget "WhereAmI-GeoJSON" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				D42843ED15D432D10088CC91 /* Debug */,

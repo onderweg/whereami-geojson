@@ -3,7 +3,7 @@
 //  WhereAmI
 //
 //  Created by Rob Mathers on 12-08-09.
-//  Copyright (c) 2012 Rob Mathers. All rights reserved.
+//  Modified by G. Stevens on june 2014
 //
 
 #import <Foundation/Foundation.h>

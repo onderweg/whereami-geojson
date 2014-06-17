@@ -2,8 +2,11 @@
 //  LocationGetter.m
 //  WhereAmI
 //
-//  Created by Rob Mathers on 12-08-09.
-//  Copyright (c) 2012 Rob Mathers. All rights reserved.
+//  Created by Rob Mathers on 12-08-09
+//  https://github.com/robmathers/WhereAmI
+//
+//  Modified by G. Stevens on june 2014
+//  https://github.com/onderweg/whereami-json
 //
 
 #import "LocationGetter.h"
@@ -47,11 +50,30 @@
 -(void)locationManager:(CLLocationManager *)manager didUpdateToLocation:(CLLocation *)newLocation fromLocation:(CLLocation *)oldLocation {
     NSTimeInterval ageInSeconds = -[newLocation.timestamp timeIntervalSinceNow];
     if (ageInSeconds > 60.0) return;   // Ignore data more than a minute old
+
+    // Create GeoJson data structure
+    NSMutableDictionary *geo = [NSMutableDictionary dictionaryWithObjectsAndKeys:
+                         @"Feature", @"type",
+                         nil];
     
-    IFPrint(@"Latitude: %f", newLocation.coordinate.latitude);
-    IFPrint(@"Longitude: %f", newLocation.coordinate.longitude);
-    IFPrint(@"Accuracy (m): %f", newLocation.horizontalAccuracy);
-    IFPrint(@"Timestamp: %@", [NSDateFormatter localizedStringFromDate:newLocation.timestamp dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterLongStyle]);
+    // 'Geometry' property
+    NSMutableDictionary *j_geometry = [NSMutableDictionary dictionary];
+    j_geometry[@"type"] = @"Point";
+    j_geometry[@"coordinates"] = @[[NSNumber numberWithFloat:newLocation.coordinate.longitude], [NSNumber numberWithFloat:newLocation.coordinate.latitude]];
+    [geo setObject:j_geometry forKey:@"geometry"];
+    
+    // 'Properties' property
+    NSMutableDictionary *j_properties = [NSMutableDictionary dictionary];
+    j_properties[@"name"] = [NSString stringWithFormat:@"Timestamp: %@",
+                             [NSDateFormatter localizedStringFromDate:newLocation.timestamp dateStyle:NSDateFormatterShortStyle timeStyle:NSDateFormatterLongStyle] ];
+    [geo setObject:j_properties forKey:@"properties"];
+    
+    // Convert object to Json string
+    NSError *error;
+    NSData* jsonData = [NSJSONSerialization dataWithJSONObject:geo
+                                                       options:NSJSONWritingPrettyPrinted error:&error];
+    NSString *jsonString = [[NSString alloc] initWithData:jsonData encoding:NSUTF8StringEncoding];
+    IFPrint(@"%@", jsonString);
     
     [self.manager stopUpdatingLocation];
     self.exitCode = 0;

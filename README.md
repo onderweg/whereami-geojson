@@ -1,20 +1,20 @@
-# WhereAmI
-A quick command line tool to get your geographic coordinates using the OS X [CoreLocation][] framework.
+# WhereAmI-GeoJson
+A quick command line tool to get your geographic coordinates in GeoJson format using the OS X [CoreLocation][] framework.
 
-Download a zip with the latest version [here][download link].
+Forked from [WhereAmI][].
 
 ## Usage
-Open with Finder to execute, or in the terminal. If it can determine a location, it will output longitude, latitude, accuracy in meters and the time the location was found. WhereAmI tries to get a recent location, and will not display one if it is more than a minute old (to avoid inaccurate results from CoreLocation's cached data). If it cannot get location data, it will quit and print an error message.
+
+Open with Finder to execute, or in the terminal. If it can determine a location, it will output current location (longitude, latitude) in *GeoJson* format (whereas the original WhereAmI displays thedata in plain text).
+
+WhereAmI tries to get a recent location, and will not display one if it is more than a minute old (to avoid inaccurate results from CoreLocation's cached data). If it cannot get location data, it will quit and print an error message.
+
+You can use [GeoJSONLint][geojsonlint] to test the output.
 
 ## Notes
 This is a quick and dirty example. I make no guarantees or warranties as to its accuracy, stability or compatibility (it should work with 10.7 and 10.8, but I have only tested it on 10.7). Feel free to do with it as you wish.
 
-## Changelog
-### 1.02
- - Fixed missing `@autoreleasepool`. Shouldn't be any practical changes, but it's good form.
-
-### 1.01
-- WhereAmI will now check if Wi-Fi is not enabled and tell the user such if it can't get location data.
-
 [corelocation]: http://en.wikipedia.org/wiki/CoreLocation
+[WhereAmI]: https://github.com/robmathers/WhereAmI
 [download link]: https://github.com/robmathers/WhereAmI/releases/download/v1.02/whereami-1.02.zip
+[geojsonlint]: http://geojsonlint.com/
