@@ -6,7 +6,7 @@
 //  https://github.com/robmathers/WhereAmI
 //
 //  Modified by G. Stevens on june 2014
-//  https://github.com/onderweg/whereami-json
+//  https://github.com/onderweg/whereami-geojson
 //
 
 #import "LocationGetter.h"
