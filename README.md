@@ -5,9 +5,9 @@ Forked from [WhereAmI][].
 
 ## Usage
 
-Open with Finder to execute, or in the terminal. If it can determine a location, it will output current location (longitude, latitude) in *GeoJson* format (whereas the original WhereAmI displays thedata in plain text).
+Open with Finder to execute, or in the terminal. If it can determine a location, it will output current location (longitude, latitude) in *GeoJson* format (whereas the original WhereAmI displays the data in plain text).
 
-WhereAmI tries to get a recent location, and will not display one if it is more than a minute old (to avoid inaccurate results from CoreLocation's cached data). If it cannot get location data, it will quit and print an error message.
+WhereAmI-GeoJson tries to get a recent location, and will not display one if it is more than a minute old (to avoid inaccurate results from CoreLocation's cached data). If it cannot get location data, it will quit and print an error message.
 
 Example output:
 
