@@ -9,6 +9,22 @@ Open with Finder to execute, or in the terminal. If it can determine a location,
 
 WhereAmI tries to get a recent location, and will not display one if it is more than a minute old (to avoid inaccurate results from CoreLocation's cached data). If it cannot get location data, it will quit and print an error message.
 
+Example output:
+
+	{
+	  "type" : "Feature",
+	  "geometry" : {
+	    "type" : "Point",
+	    "coordinates" : [
+	      5.26,
+	      52.30276
+	    ]
+	  },
+	  "properties" : {
+	    "name" : "Timestamp: 17\/06\/14 20:34:08 GMT+2"
+	  }
+	}
+
 You can use [GeoJSONLint][geojsonlint] to test the output.
 
 ## Notes
