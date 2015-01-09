@@ -1,5 +1,5 @@
 # WhereAmI-GeoJson
-A quick command line tool to get your geographic coordinates in GeoJson format using the OS X [CoreLocation][] framework.
+A command line tool to get your geographic coordinates in GeoJson format using the OS X [CoreLocation][] framework.
 
 Forked from [WhereAmI][].
 
